@@ -26,3 +26,7 @@ test('handleFoul increases strikeCount by 1 or returns null if strikeCount === 2
   expect(handleFoul(2)).toBe(2);
   expect(handleFoul(2)).not.toBe(emptyCount);
 });
+
+test('handleHit returns an object containing a reset count', () => {
+  expect(handleHit()).toMatchObject(emptyCount);
+});

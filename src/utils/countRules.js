@@ -26,5 +26,5 @@ export const handleFoul = strikeCount => {
 export const handleHit = () => {
   // reset current ball count
   // resest current strike count
-  resetCount();
+  return resetCount();
 };
