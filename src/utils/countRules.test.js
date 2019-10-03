@@ -19,3 +19,10 @@ test('handleStrike increases strikeCount by 1 or resets count if strikeCount ===
   expect(handleStrike(2)).toMatchObject(emptyCount);
   expect(handleStrike(1)).not.toBe(1);
 });
+
+test('handleFoul increases strikeCount by 1 or returns null if strikeCount === 2', () => {
+  expect(handleFoul(0)).toBe(1);
+  expect(handleFoul(1)).toBe(2);
+  expect(handleFoul(2)).toBe(2);
+  expect(handleFoul(2)).not.toBe(emptyCount);
+});

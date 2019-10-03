@@ -20,7 +20,7 @@ export const handleStrike = strikeCount => {
 export const handleFoul = strikeCount => {
   // if the current strike count is < 2, increase the current strike count by 1
   // if the current strike count is >= 2, do nothing
-  return strikeCount < 1 ? (strikeCount += 1) : strikeCount;
+  return strikeCount < 2 ? (strikeCount += 1) : strikeCount;
 };
 
 export const handleHit = () => {
