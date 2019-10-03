@@ -6,10 +6,9 @@ test('Display renders without crashing', () => {
   render(<Display />);
 });
 
-test('Display renders Current at bat for batterName', () => {
+test('Display renders  batterName', () => {
   const batterName = 'Joe';
-  const str = `current at bat for ${batterName}`;
-  const regexString = new RegExp(str, 'i');
+  const regexString = new RegExp(batterName, 'i');
   const { getByTestId } = render(<Display batterName={batterName} />);
   expect(getByTestId('batterName-display').textContent).toMatch(regexString);
 });
