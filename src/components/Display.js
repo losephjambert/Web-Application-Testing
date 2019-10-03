@@ -3,7 +3,7 @@ import React from 'react';
 const Display = props => {
   return (
     <section>
-      <h2>Current at bat for {props.batterName}</h2>
+      <h2 data-testid='batterName-display'>Current at bat for {props.batterName}</h2>
       <section>
         <h3>Balls</h3>
         <p>0</p>
