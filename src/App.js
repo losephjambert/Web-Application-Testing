@@ -1,4 +1,5 @@
 import React from 'react';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -6,7 +7,9 @@ function App() {
       <header>
         <h1>Baseball Rules</h1>
       </header>
-      <main></main>
+      <main>
+        <Dashboard />
+      </main>
       <footer></footer>
     </div>
   );
