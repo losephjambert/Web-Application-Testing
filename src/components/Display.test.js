@@ -13,6 +13,7 @@ test('Display renders without crashing', () => {
 test('Display renders props', () => {
   const regexString = new RegExp(batterName, 'i');
   const { getByTestId } = render(<Display batterName={batterName} count={count} />);
+
   expect(getByTestId('batterName-display').textContent).toMatch(regexString);
   expect(getByTestId('balls-display').textContent).toMatch(count.balls.toString());
   expect(getByTestId('strikes-display').textContent).toMatch(count.strikes.toString());
