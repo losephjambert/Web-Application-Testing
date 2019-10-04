@@ -6,7 +6,7 @@ test('Display renders without crashing', () => {
   render(<Display />);
 });
 
-test('Display renders  batterName', () => {
+test('Display renders props', () => {
   const batterName = 'Joe';
   const regexString = new RegExp(batterName, 'i');
   const { getByTestId } = render(<Display batterName={batterName} />);
