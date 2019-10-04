@@ -8,7 +8,7 @@ const resetCount = () => {
 export const handleBall = (currentCount, ballCount) => {
   // increase the current ball count by 1
   // if the current ball count === 3, return 0
-  if ((currentCount, ballCount) === 3) return resetCount();
+  if (ballCount === 3) return resetCount();
   else
     return {
       ...currentCount,
