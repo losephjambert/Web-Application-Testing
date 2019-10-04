@@ -8,13 +8,6 @@ const Dashboard = () => {
     balls: 0,
   });
 
-  const handlePitch = newCount => {
-    console.log(newCount);
-    setCount({
-      ...newCount,
-    });
-  };
-
   return (
     <>
       <section>
@@ -22,11 +15,11 @@ const Dashboard = () => {
           type='button'
           name='strikes'
           value='Strike'
-          onClick={() => handlePitch(handleStrike(count, count.strikes))}
+          onClick={() => setCount(handleStrike(count, count.strikes))}
         />
-        <input type='button' name='balls' value='Ball' onClick={() => handlePitch(handleBall(count, count.balls))} />
-        <input type='button' name='foul' value='Foul' onClick={() => handlePitch(handleFoul(count, count.strikes))} />
-        <input type='button' name='hit' value='Base Hit' onClick={() => handlePitch(handleHit())} />
+        <input type='button' name='balls' value='Ball' onClick={() => setCount(handleBall(count, count.balls))} />
+        <input type='button' name='foul' value='Foul' onClick={() => setCount(handleFoul(count, count.strikes))} />
+        <input type='button' name='hit' value='Base Hit' onClick={() => setCount(handleHit())} />
       </section>
       <Display batterName={'Joe'} count={count} />
     </>
