@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import Display from './Display';
 import { handleBall, handleStrike, handleFoul, handleHit } from '../utils/countRules';
 
-const Dashboard = props => {
+const Dashboard = () => {
   const [count, setCount] = useState({
     strikes: 0,
     balls: 0,
   });
 
   const handlePitch = (e, newCount) => {
-    console.log('handle pitch ', e.target.name);
-    console.log('handle pitch ', newCount);
     setCount({
       ...newCount,
     });
