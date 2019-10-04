@@ -5,26 +5,30 @@ const emptyCount = {
   strikes: 0,
 };
 
+const testCount = {
+  balls: 2,
+  strikes: 1,
+};
+
 test('handleBall increases ballCount by 1 or resets count if ballCount === 3', () => {
-  expect(handleBall(0)).toBe(1);
-  expect(handleBall(1)).toBe(2);
-  expect(handleBall(2)).toBe(3);
-  expect(handleBall(3)).toBe(0);
-  expect(handleBall(1)).not.toBe(0);
+  expect(handleBall(testCount, testCount.balls)).toMatchObject({
+    balls: 3,
+    strikes: 1,
+  });
 });
 
 test('handleStrike increases strikeCount by 1 or resets count if strikeCount === 2', () => {
-  expect(handleStrike(0)).toBe(1);
-  expect(handleStrike(1)).toBe(2);
-  expect(handleStrike(2)).toBe(0);
-  expect(handleStrike(1)).not.toBe(1);
+  expect(handleStrike(testCount, testCount.strikes)).toMatchObject({
+    balls: 2,
+    strikes: 2,
+  });
 });
 
 test('handleFoul increases strikeCount by 1 or returns null if strikeCount === 2', () => {
-  expect(handleFoul(0)).toBe(1);
-  expect(handleFoul(1)).toBe(2);
-  expect(handleFoul(2)).toBe(2);
-  expect(handleFoul(2)).not.toBe(emptyCount);
+  expect(handleFoul(testCount, testCount.strikes)).toMatchObject({
+    balls: 2,
+    strikes: 2,
+  });
 });
 
 test('handleHit returns an object containing a reset count', () => {

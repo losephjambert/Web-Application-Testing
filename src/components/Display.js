@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Display = props => {
+const Display = ({ batterName, count: { strikes, balls } }) => {
   return (
     <section>
-      <h2 data-testid='batterName-display'>Current at bat for {props.batterName}</h2>
-      <section>
+      <h2 data-testid='batterName-display'>Current at bat for {batterName}</h2>
+      <section data-testid='balls-display'>
         <h3>Balls</h3>
-        <p>0</p>
+        <p>{balls}</p>
       </section>
-      <section>
+      <section data-testid='strikes-display'>
         <h3>Strikes</h3>
-        <p>0</p>
+        <p>{strikes}</p>
       </section>
     </section>
   );
