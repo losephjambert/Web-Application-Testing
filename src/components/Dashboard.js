@@ -8,7 +8,7 @@ const Dashboard = () => {
     balls: 0,
   });
 
-  const handlePitch = (e, newCount) => {
+  const handlePitch = newCount => {
     setCount({
       ...newCount,
     });
@@ -21,7 +21,7 @@ const Dashboard = () => {
           type='button'
           name='strikes'
           value='Strike'
-          onClick={e => handlePitch(e, handleStrike(count, count.strikes))}
+          onClick={() => handlePitch(handleStrike(count, count.strikes))}
         />
         <input
           type='button'
